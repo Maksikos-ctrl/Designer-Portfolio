@@ -68,6 +68,7 @@ ul
     display: flex;
     align-items: center;
     justify-content: center;
+    display: none;
     overflow: hidden; /* Якщо щосб вилізає за обмеження, то тупо обрізуеться */
     position: fixed;
     left: 0;
@@ -144,4 +145,69 @@ ul
     }
 }
 
+
 /* Прелоадінг-анімації */
+.mouse
+{
+    display: none;
+
+}
+.container
+{
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+    min-width: 320px;
+    padding: 30px 0;
+    /* opacity: 0;
+    transform: translateY(100px); */
+}
+
+.header_container
+{
+    display: flex;
+    align-items: center;
+}
+
+.logo
+{
+    display: inline-flex;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.logo_letter
+{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    border-radius: 100%;
+    width: 37px;
+    height: 37px;
+    margin-right: 10px;
+}
+
+.nav__list
+{
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.main-wrapper
+{
+    padding-top: 300px;
+}
