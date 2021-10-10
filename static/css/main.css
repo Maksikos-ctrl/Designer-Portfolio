@@ -1,0 +1,147 @@
+*,
+*::after,
+*::before
+{
+    box-sizing: border-box;
+    /* cursor: none !important; */
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../fonts/Oswald-Regular.woff') format('woff');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../fonts/Merriweather-Light.woff') format('woff');
+    font-weight: 300;
+    font-display: swap;
+    font-style: normal;
+}
+
+body
+{
+    min-width: 320px; /* Если будем сдивагать сайт меньше 320 */
+    font-family: 'Oswald', sans-serif;
+    color: #000;
+    line-height: 24px;
+}
+
+a 
+{
+    text-decoration: none; /* Прибираэмо дефолтную декорацію тексту */
+    color: inherit;
+}
+
+img
+{
+    max-width: 100%;
+}
+
+ul
+{
+    list-style: none;
+}
+
+.site-container
+{
+    overflow: hidden;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+}
+
+.preloader
+{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Якщо щосб вилізає за обмеження, то тупо обрізуеться */
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100000;
+    width: 100%;
+    height: 100%;
+    background-color: #B1B3B2;
+}
+.preloader__bottom
+{
+    font-family: 'Merriweather', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 360px;
+    line-height: 453px;
+    color: #fff;
+    /* opacity: 0; */
+    transform: translateX(5%); /* масштабирует элемент по центру */
+    transition: opacity 0.3s ease-in-out; /*a transition effect with a slow start and end.  */
+    /* animation: preloader 20s linear; */
+}
+.preloader__top
+{
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-family: 'Merriweather', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 72px;
+    line-height: 91px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* opacity: 0; */
+    transition: opacity 0.3s ease-in-out cubic-bezier(0.770, 0.125, 0.265, 1.040), transform 0.3s cubic-bezier(0.770, 0.125, 0.265, 1.040); /* a transition effect with a slow start and end */
+    
+}
+
+.preloader_bg
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 330px;
+    height: 220px;
+    background-color: #fff;
+    z-index: -1; /* опускаем наш блочёк */
+    transform: translate(-50%, -50%);
+}
+
+.preloader_bg::before
+{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: #fff;
+    transition: width 0.3s cubic-bezier(0.770, 0.125, 0.265, 1.040);
+}
+
+@keyframes preloader
+{
+    0% 
+    {
+        transform: translateX(7%); 
+    }
+    100%
+    {
+        transform: translateX(-100%); 
+    }
+}
+
+/* Прелоадінг-анімації */
