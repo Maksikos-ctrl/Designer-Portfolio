@@ -3,7 +3,7 @@
 *::before
 {
     box-sizing: border-box;
-    /* cursor: none !important; */
+    cursor: none !important;
 }
 
 @font-face {
@@ -68,7 +68,6 @@ ul
     display: flex;
     align-items: center;
     justify-content: center;
-    display: none;
     overflow: hidden; /* Якщо щосб вилізає за обмеження, то тупо обрізуеться */
     position: fixed;
     left: 0;
@@ -86,11 +85,12 @@ ul
     font-size: 360px;
     line-height: 453px;
     color: #fff;
-    /* opacity: 0; */
+    opacity: 0;
     transform: translateX(5%); /* масштабирует элемент по центру */
     transition: opacity 0.3s ease-in-out; /*a transition effect with a slow start and end.  */
-    /* animation: preloader 20s linear; */
+    animation: preloader 20s linear;
 }
+
 .preloader__top
 {
     margin: 0;
@@ -103,8 +103,8 @@ ul
     font-size: 72px;
     line-height: 91px;
     top: 50%;
-    transform: translate(-50%, -50%);
-    /* opacity: 0; */
+    transform: translate(-50%, -20%);
+    opacity: 0;
     transition: opacity 0.3s ease-in-out cubic-bezier(0.770, 0.125, 0.265, 1.040), transform 0.3s cubic-bezier(0.770, 0.125, 0.265, 1.040); /* a transition effect with a slow start and end */
     
 }
@@ -116,7 +116,6 @@ ul
     top: 50%;
     width: 330px;
     height: 220px;
-    background-color: #fff;
     z-index: -1; /* опускаем наш блочёк */
     transform: translate(-50%, -50%);
 }
@@ -130,7 +129,7 @@ ul
     width: 0;
     height: 100%;
     background-color: #fff;
-    transition: width 0.3s cubic-bezier(0.770, 0.125, 0.265, 1.040);
+    transition: width 0.7s cubic-bezier(0.770, 0.125, 0.265, 1.040);
 }
 
 @keyframes preloader
@@ -145,8 +144,51 @@ ul
     }
 }
 
+.preloader-animation .preloader__bottom
+{ 
+    opacity: 0.15;
+}
 
-/* Прелоадінг-анімації */
+.preloader-animation .preloader__top
+{
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+.preloader-animation .preloader_bg::before
+{
+    transition-delay: 0.5s; /* Свойство transition-delay устанавливает время ожидания перед запуском эффекта перехода */
+    width: 330px;
+}
+
+.preloader_hidden .preloader__bottom
+{
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out cubic-bezier(0.770, 0.125, 0.265, 1.040), transform 0.3s cubic-bezier(0.770, 0.125, 0.265, 1.040); /* a transition effect with a slow start and end */
+}
+
+.preloader_hidden .preloader_bg::before
+{
+    width: 0;
+}
+
+.preloader_hidden .preloader__top
+{
+    opacity: 0;
+    transition-delay: 0.5s;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease-in-out;
+}
+
+.preloader-none 
+{
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+
+
 .mouse
 {
     position: fixed;
@@ -196,6 +238,7 @@ ul
     transform: translate(-50%, -50%);
     width: 80px;
     height: 80px;
+    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -206,6 +249,26 @@ ul
     color: #fff;
     background-color: #000;
     border-radius: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.view-visible .mouse__view
+{
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.links-visible::after
+{
+    border: 4px solid #CDCDCD;
+    transform: translate(-50%, -50%) scale(0.5);
+    background-color: transparent; /* прозрачний фон */
+    transition: 0.3s;
+}
+
+.links-visible::before
+{
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 }
@@ -227,8 +290,8 @@ ul
     z-index: 20;
     min-width: 320px;
     padding: 30px 0;
-    /* opacity: 0;
-    transform: translateY(100px); */
+    opacity: 0;
+    transform: translateY(100px);
 }
 
 .header_container
@@ -380,8 +443,8 @@ ul
 .main-section__explore {
     letter-spacing: 1px;
     text-transform: uppercase;
-    /* opacity: 0;
-    transform: translateY(100px); */
+    opacity: 0;
+    transform: translateY(100px);
 }
 
 .slides-container__text {
@@ -399,8 +462,9 @@ ul
     font-size: 112px;
     line-height: 130px;
     color: #fff;
-    /* opacity: 0;
-    transform: translateY(100px); */
+    margin-left: -10px;
+    opacity: 0;
+    transform: translateY(100px);
 }
 
 .slides-container__title--dark {
@@ -409,8 +473,8 @@ ul
 
 .designers-info {
     display: flex;
-    /* opacity: 0; */
-    /* transform: translateY(100px); */
+    opacity: 0; 
+    transform: translateY(100px); 
 }
 
 .designers-info__descr {
@@ -495,6 +559,7 @@ ul
 {
     opacity: 1;
     z-index: 11;
+    pointer-events: auto;
 }
 
 .index

@@ -15,10 +15,10 @@
 // #this program. If not, see <http://www.gnu.org/licenses/>.
 
 /* 
-                Plan
+                               PLAN
 
 ------------------------------ FRONT-END ----------------------------------------------------------------                
-1. Опрацювати курсор
+1. Опрацювати курсор +
 2. Початкова анімація
 3. Анімація фону
 4. Анімація тексту
@@ -27,13 +27,81 @@
 7. Файл глобальних налаштувань
 8. Головний файл(цей) + зробити скролл
 9. Після верстки лендінгу та responsive під мобіли починаю робити сторінки: About us, feedback etc.
-10. Інітіалізую npm пакет в цей проэкт та підключаю json-server.
+10. Для відправки данних про це, підключу XHR || FETCH API
+11. Інітіалізую npm пакет в цей проэкт та підключаю json-server.
 
 ------------------------------  BACK-END ---------------------------------------------------------------- 
 1. На Flask роблю елементарні переходи на інші сторінки.
 2. Спробую подружити Flask && npm і реалізувати це на Flask. ELSE Зроблю все в серверному js, а фласк буде тільки як локальний сервер та маленька мультиязичність сайту. 
 
 */
+
+
+const init = () => {
+
+
+    window.onload = () => {
+        const preloader = document.querySelector('.preloader');
+        preloader.classList.add('preloader-animation');
+
+        setTimeout(() => {
+            preloader.classList.remove('preloader-animation');
+            preloader.classList.add('preloader-hidden');
+        }, 3000);
+
+        setTimeout(() => {
+            startAnimation();
+            preloader.classList.add('preloader-none');
+        }, 3200);
+    };
+
+    const showNextSlide = () => {
+        bgSlides('down'); 
+        console.log('next');
+    };
+
+    const showPrevSlide = () => {
+        bgSlides('up'); 
+        console.log('prev');
+    };
+    
+    if (window.innerWidth > 768) { // Буде норм робити для всіх крім мобілок, там ми зробимо по-іншому
+        window.addEventListener("wheel", e => {
+            
+            let delta = -e.deltaY;
+
+            if (delta > 0) { // Дельта > 0 за нуль значить що якщо ми скроллимо кудись вгору
+                if (helperInput.value == '1') {
+                    console.log('Скроллимо до гори'); 
+                    helperInput.value = 0;
+                    showPrevSlide();
+                    setTimeout(() => {
+                        helperInput.value = 1;
+                    }, 1500);
+                }
+           } else {
+                if (helperInput.value == '1') {
+                    helperInput.value = 0;
+                    console.log('Внизу скроллимо');
+                    showNextSlide();
+                    setTimeout(() => {
+                        helperInput.value = 1;
+                    }, 1500);
+                }
+            }
+        });
+    } else {
+        document.addEventListener('swiped-left', () => {
+            showNextSlide();
+        });
+
+        document.addEventListener('swiped-right', () => {
+            showPrevSlide();
+        });
+    }
+};
+
+init();
 
 
 
