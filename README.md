@@ -1,5 +1,5 @@
-## First-Website-with-GreenSock
+## Website-with-GreenSock
 -------------------------------
-### Front-end: GreenSock && npm stuff
+### Front-end: GreenSock && npm stuff && DB json && Swiper js
 -------------------------------------
-### Back-end: Flask
+### Back-end: Flask, Fast API

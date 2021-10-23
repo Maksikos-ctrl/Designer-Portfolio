@@ -3,7 +3,7 @@
 const bgItems = document.querySelectorAll('.slide-bg__link'),
     imgsSlides = document.querySelectorAll('.slide-bg__inner'),
     shapes = document.querySelectorAll('.shapes__content'),
-    shapesSlides = document.querySelectorAll('.shapes__item'),
+    shapeSlides = document.querySelectorAll('.shapes__item'),
     helperInput = document.querySelector('#helper-input'),
     mainSection = document.querySelector('.main-section'),
     mouse = document.querySelector('.mouse'),
@@ -18,7 +18,7 @@ const startComplete = () => {
     imgsSlides.forEach((item) => {
         item.style.opacity = 1;
     });  
-    shapesSlides.forEach((shape) => {
+    shapeSlides.forEach((shape) => {
         shape.style.opacity = 1;
     });  
 };
