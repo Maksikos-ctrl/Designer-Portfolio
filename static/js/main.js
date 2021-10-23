@@ -1,6 +1,6 @@
 "use strict";
 
-// #Website Greensock + FLask + npm
+// #Website Greensock + FLask + DB JSON + Swiper Js
 // #Copyright (C) 2021 Maksikos-ctrl 
 
 // #This program is free software: you can redistribute it and/or modify it under
@@ -22,8 +22,8 @@
 2. Початкова анімація +
 3. Анімація фону +
 4. Анімація тексту + 
-5. Анімація фону З правого боку
-6. Анімація "формочок"
+5. Анімація фону З правого боку +
+6. Анімація "формочок" +
 7. Файл глобальних налаштувань +
 8. Головний файл(цей) + зробити скролл +
 9. Після верстки лендінгу та responsive під мобіли починаю робити сторінки: About us, feedback etc.
@@ -108,6 +108,14 @@ const init = () => {
 };
 
 init();
+
+// const burger = document.getElementById('burger'),
+//     list = document.getElementById('nav-list');
+
+// burger.addEventListener('click', () => {
+//     list.classList.toggle('show');
+// });  
+
 
 
 
