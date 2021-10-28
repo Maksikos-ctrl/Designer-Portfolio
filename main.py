@@ -14,7 +14,7 @@ def about():
     return render_template("about.html")  
 
 
-@app.route("/feedback")
+@app.route("/feedback", methods=["GET", "POST"])
 def feedback():
     return render_template("feedback.html")
 
