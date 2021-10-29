@@ -2,4 +2,4 @@
 -------------------------------
 ### Front-end: GreenSock && npm stuff && DB json && Swiper js
 -------------------------------------
-### Back-end: Flask, Fast API
+### Back-end: Flask, Fetch API
