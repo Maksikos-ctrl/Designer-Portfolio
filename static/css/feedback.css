@@ -135,7 +135,7 @@ body
 
 .input__box input[type="submit"]
 {
-    background: rgb(238, 84, 109);
+    background: rgb(185, 41, 65);
     color: #fff;
     border: none;
     font-size: 1.1em;
@@ -145,6 +145,9 @@ body
     padding: 14px 15px;
 }
 
-.input__box {}
+.input__box 
+{
+    color: #999;
+}
 
 
