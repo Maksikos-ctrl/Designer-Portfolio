@@ -17,9 +17,9 @@ def about():
 @app.route("/feedback", methods=["POST", "GET"])
 def feedback():
        
-    if request.method == "POST":
-        print(request.get_json())
-        return 'Success', 200
+    # if request.method == "POST":
+    #     print(request.get_json())
+    #     return 'Success', 200
 
 
     return render_template("feedback.html")

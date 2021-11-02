@@ -82,14 +82,37 @@ function postData(form) {
         }).finally(() => {
                 form.reset();
         });
-        
-
-        function showGratitudePopUp(message) {
-            const prevPopUp = document.querySelector('.modal__body');
-
-            prevPopUp.classList.add('hide');
-
-            openModal();
-        }
-    });
+    });     
 }
+
+function showGratitudePopUp(message) {
+    const prevPopUp = document.querySelector('.modal__body');
+
+    prevPopUp.classList.add('hide');
+
+    openModal();
+
+    const gratitudePopUp = document.createElement('div');
+
+    gratitudePopUp.classList.add('modal__body');
+
+    gratitudePopUp.innerHTML = `
+        <div class="modal__content">
+            <div class="modal__close" data-close="modal__close">×</div> 
+            <div class="modal__title">${message}</div>
+        </div>
+    `;
+
+    document.querySelector('.modal').append('gratitudePopUp');
+    setTimeout(() => {
+        gratitudePopUp.remove();
+        prevPopUp.classList.add('show');
+        prevPopUp.classList.remove('hide');
+        closeModal(); 
+    }, 3000);
+
+    fetch('db.json')
+    .then(data => data.json())
+    .then(res => console.log(res));
+}
+
