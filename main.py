@@ -1,4 +1,4 @@
-from flask import Flask, render_template, json
+from flask import Flask, render_template, jsonify, request
 
 
 app = Flask(__name__)
@@ -14,8 +14,14 @@ def about():
     return render_template("about.html")  
 
 
-@app.route("/feedback", methods=["GET", "POST"])
+@app.route("/feedback", methods=["POST", "GET"])
 def feedback():
+       
+    if request.method == "POST":
+        print(request.get_json())
+        return 'Success', 200
+
+
     return render_template("feedback.html")
 
 
