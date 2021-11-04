@@ -20,29 +20,29 @@
                         <div class="row">
                             <div class="input__box">
                                 <span>First Name</span>
-                                <input type="text" placeholder="for instance: Ilya">
+                                <input required type="text" name="name" placeholder="for instance: Ilya" class="modal__input">
                             </div>
                             <div class="input__box">
                                 <span>Last Name</span>
-                                <input type="text" placeholder="for instance: Balashov">
+                                <input required type="text" name="surname" placeholder="for instance: Balashov" class="modal__input">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="input__box">
                                 <span>Email</span>
-                                <input type="text" placeholder="for instance: ilya@2005gmail.com">
+                                <input required type="email" name="email" placeholder="for instance: ilya@2005gmail.com" class="modal__input">
                             </div>
                             <div class="input__box">
                                 <span>Mobile</span>
-                                <input type="text" placeholder="for instance: +8 800 555 35 35">
+                                <input required placeholder="for instance:" name="phone" type="phone" placeholder="for instance: +8 800 555 35 35" class="modal__input">
                             </div>
                         </div>
 
                         <div class="row1">
                             <div class="input__box">
                                 <span>Message</span>
-                                <textarea placeholder="Write your message here..."></textarea>
+                                <textarea required placeholder="Write your message here..." name="text" type="text" class="modal__input"></textarea>
                             </div>
                         </div>    
 
@@ -86,6 +86,8 @@
         <div class="modal__body">
             <div class="modal__content">
               <form action="#">
+                <div class="modal__close" data-close>&times;</div>
+                <div class="modal__title">Мы свяжемся с вами как можно быстрее!</div>
               </form>
             </div>
         </div>

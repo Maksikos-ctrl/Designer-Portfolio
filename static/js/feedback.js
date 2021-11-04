@@ -42,10 +42,22 @@ const message = {
 };
 
 forms.forEach(item => {
-    postData(item);
+    connectPostData(item);
 });
 
-function postData(form) {
+const postData = async (url, data) => {
+    const res = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: data
+    });
+
+    return await res.json();
+}; 
+
+function connectPostData(form) {
     form.addEventListener('submit', e => {
         e.preventDefault();
 
@@ -65,13 +77,16 @@ function postData(form) {
 
         const json = JSON.stringify(obj);
 
-        fetch('/feedback', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(obj)
-        })
+        // fetch('/feedback', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(obj)
+        // })
+
+
+        postData('http://localhost:3000/requests', JSON.stringify(obj)) 
         .then(data =>  data.text())
         .then(data => {
                 console.log(data);
