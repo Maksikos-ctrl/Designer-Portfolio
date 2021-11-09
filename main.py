@@ -9,7 +9,7 @@ def main():
     return render_template("index.html")
 
 
-@app.route("/about")
+@app.route("/about", methods=["POST", "GET"])
 def about():
     return render_template("about.html")  
 
@@ -18,7 +18,6 @@ def about():
 def feedback():
        
     if request.method == "POST":
-        print(request.get_json())
         return 'Success', 200
 
 

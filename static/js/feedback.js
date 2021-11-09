@@ -69,13 +69,13 @@ function connectPostData(form) {
 
         const formData = new FormData(form);
 
-        const obj = {};
+        // const obj = {};
 
-        formData.forEach((value, key) => {
-            obj[key] = value; 
-        });
+        // formData.forEach((value, key) => {
+        //     obj[key] = value; 
+        // });
 
-        const json = JSON.stringify(obj);
+        const json = JSON.stringify(Object.fromEntries(formData.entries()));
 
         // fetch('/feedback', {
         //     method: 'POST',
@@ -86,12 +86,12 @@ function connectPostData(form) {
         // })
 
 
-        postData('http://localhost:3000/requests', JSON.stringify(obj)) 
+        postData('http://localhost:3000/requests', json) 
         .then(data =>  data.text())
         .then(data => {
-                console.log(data);
-                showGratitudePopUp(message.success);
-                statusOfMsg.remove(); 
+            console.log(data);
+            showGratitudePopUp(message.success);
+            statusOfMsg.remove(); 
         }).catch(() => {
                 showGratitudePopUp(message.unsuccessful);
         }).finally(() => {
@@ -118,13 +118,13 @@ function showGratitudePopUp(message) {
         </div>
     `;
 
-    document.querySelector('.modal').append('gratitudePopUp');
+    document.querySelector('.modal').append(gratitudePopUp);
     setTimeout(() => {
         gratitudePopUp.remove();
         prevPopUp.classList.add('show');
         prevPopUp.classList.remove('hide');
         closeModal(); 
-    }, 3000);
+    }, 6000);
 
     fetch('db.json')
     .then(data => data.json())
