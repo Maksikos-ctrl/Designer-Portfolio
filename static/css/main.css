@@ -715,7 +715,7 @@ ul
 
 @media (max-width: 420px) {
     .header__burger {
-        margin-left: 108px;
+        margin-left: 115px;
     }
     .logo {
         display: inline-flex;
@@ -723,6 +723,11 @@ ul
         text-transform: uppercase;
         letter-spacing: 0px;
         margin-top: -15%;
+    }
+    .nav__list.show {
+        display: flex;
+        margin-top: -10%;
+        margin-left: -80px;
     }
     .nav__link {
         text-transform: uppercase;
