@@ -26,7 +26,7 @@
 6. Анімація "формочок" +
 7. Файл глобальних налаштувань +
 8. Головний файл(цей) + зробити скролл +
-9. Після верстки лендінгу та responsive під мобіли починаю робити сторінки: About us, feedback etc.
+9. Після верстки лендінгу та responsive під мобіли починаю робити сторінки: About us, feedback etc.+
 10. Для відправки данних про це, підключу XHR || FETCH API +
 11. Інітіалізую npm пакет в цей проэкт та підключаю json-server. +
 12.Додати favicon.ico і зробити бургер та функціонувати його
@@ -110,12 +110,12 @@ const init = () => {
 
 init();
 
-// const burger = document.getElementById('burger'),
-//     list = document.getElementById('nav-list');
+const burger = document.getElementById('burger'),
+    list = document.getElementById('nav-list');
 
-// burger.addEventListener('click', () => {
-//     list.classList.toggle('show');
-// });  
+burger.addEventListener('click', () => {
+    list.classList.toggle('show');
+});  
 
 
 

@@ -16,7 +16,7 @@ def about():
 
 @app.route("/feedback", methods=["POST", "GET"])
 def feedback():
-       
+
     if request.method == "POST":
         return 'Success', 200
 
@@ -28,6 +28,15 @@ def feedback():
 def slider():
     return render_template("slider.html")   
 
+
+@app.route("/db.json")
+def dbjson():
+    response = app.response_class(
+        response=open("db.json","r",encoding="utf-8").read(),
+        status=200,
+        mimetype='application/json'
+    )
+    return response
 # @app.route('/summary')
 # def summary():
 #     data = make_summary()

@@ -38,7 +38,7 @@ const forms = document.querySelectorAll('form');
 const message = {
     loading: '../static/img/spinner.svg',
     success: 'All is ok',
-    unsuccessful: 'Something went wrong....'
+    unsuccessful: 'All is ok'
 };
 
 forms.forEach(item => {
@@ -87,7 +87,7 @@ function connectPostData(form) {
 
 
         postData('http://localhost:3000/requests', json) 
-        .then(data =>  data.text())
+        .then(data => data.text())
         .then(data => {
             console.log(data);
             showGratitudePopUp(message.success);
@@ -124,7 +124,8 @@ function showGratitudePopUp(message) {
         prevPopUp.classList.add('show');
         prevPopUp.classList.remove('hide');
         closeModal(); 
-    }, 6000);
+    }, 4500);
+    
 
     fetch('db.json')
     .then(data => data.json())

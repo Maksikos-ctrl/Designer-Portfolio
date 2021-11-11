@@ -134,6 +134,70 @@
       "phone": "+38000000000",
       "text": "віфвфі",
       "id": 16
+    },
+    {
+      "name": "Денис",
+      "surname": "Богатирь",
+      "email": "drochila@gmail.com",
+      "phone": "+67897678676",
+      "text": "ООООО......Привет.Всё работает",
+      "id": 17
+    },
+    {
+      "name": "Саня ",
+      "surname": "Ппин",
+      "email": "irish@gmail.com",
+      "phone": "+998765678",
+      "text": "Hey",
+      "id": 18
+    },
+    {
+      "name": "Вася",
+      "surname": "Пупкин",
+      "email": "vasya@gmail.com",
+      "phone": "+38096788",
+      "text": "Ваш сайт очень классный, Вы большой молодец!",
+      "id": 19
+    },
+    {
+      "name": "dsadas",
+      "surname": "dasdsa",
+      "email": "gamil@gmail.com",
+      "phone": "+987768",
+      "text": "cool",
+      "id": 20
+    },
+    {
+      "name": "das",
+      "surname": "dsadsa",
+      "email": "masyrik@gmail.com",
+      "phone": "+4567890",
+      "text": "dsadsad",
+      "id": 21
+    },
+    {
+      "name": "dsa",
+      "surname": "dsadsa",
+      "email": "masya@gmail.com",
+      "phone": "+789",
+      "text": "dsaldsa",
+      "id": 22
+    },
+    {
+      "name": "pidor",
+      "surname": "vasya",
+      "email": "pizdes@gmail.com",
+      "phone": "+5675678754",
+      "text": "dsadasdas",
+      "id": 23
+    },
+    {
+      "name": "Мася",
+      "surname": "Черни",
+      "email": "maksik@gmail.com",
+      "phone": "+567890876",
+      "text": "dsadsadsadsad",
+      "id": 24
     }
   ]
 }

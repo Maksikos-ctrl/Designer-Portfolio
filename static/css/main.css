@@ -364,38 +364,6 @@ ul
     
 } 
 
-/* .burger
-{
-    position: relative;
-    width: 60px;
-    height: 9px;
-    border: none;
-    padding: 0;
-    background-color: transparent;
-    cursor: pointer;
-   
-}
-
-.burger::before,
-.burger::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #000;
-}
-
-.burger::before
-{
-    top: 0;
-}
-
-.burger::after
-{
-    bottom: 0;
-}  */
-
 
 
 .main-section {
@@ -643,24 +611,39 @@ ul
         width: 100%;
     }
 
-    /* .nav__list.show {
-        display: flex;
-        position: absolute;
-        right: 0px;
-        height: 92vh;
-        top: 8vh;
-        background-color: #727272;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 50%;
-        transform: translateX(100%);
-        transition: transform 0.5s ease-in;
-    } */
-
     .header__burger {
-        display: block;
+        display: flex;
         margin-left: 324px;
+    }
+
+    .header_nav
+    {
+        flex-direction: column;
+        align-items: flex-start;
+        z-index: 1;
+    }
+
+    .nav__list ul
+    {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .nav__list li
+    {
+        text-align: left;
+    }
+
+    .nav__link
+    {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-left: -38px;
+    }    
+    .nav__list.show
+    {
+        display: flex;
+        margin-top: -10%;
     }
     
 
@@ -710,6 +693,12 @@ ul
     .header__burger {
         margin-left: 200px;
     }
+    .nav__link {
+    
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-left: -55px;
+    }
     .slide-bg {
         height: 250px;
     }
@@ -726,7 +715,20 @@ ul
 
 @media (max-width: 420px) {
     .header__burger {
-        margin-left: 100px;
+        margin-left: 108px;
+    }
+    .logo {
+        display: inline-flex;
+        align-items: center;
+        text-transform: uppercase;
+        letter-spacing: 0px;
+        margin-top: -15%;
+    }
+    .nav__link {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-left: -60px;
+        margin-right: 6px;
     }
     .slides-container__title {
         font-size: 60px;
