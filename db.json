@@ -198,6 +198,22 @@
       "phone": "+567890876",
       "text": "dsadsadsadsad",
       "id": 24
+    },
+    {
+      "name": "Максим",
+      "surname": "Черников",
+      "email": "release@gmail.com",
+      "phone": "+830835456",
+      "text": "ВАУ...... А тестером Быть круто. Не так ли?",
+      "id": 25
+    },
+    {
+      "name": "Мася",
+      "surname": "Привет",
+      "email": "release@gmail.com",
+      "phone": "+678986",
+      "text": "Привтететете",
+      "id": 26
     }
   ]
 }
