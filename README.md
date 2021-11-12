@@ -2,7 +2,7 @@
 
 ## First what you need to do
 
-- Install git repo in your project with the following command git clone [Git clone](https://git-scm.com/docs/git-clone)
+- Install git repo in your project with the following command  [Git clone](https://git-scm.com/docs/git-clone)
 
 ## Then
 
@@ -23,7 +23,7 @@ json-server --watch db.json
 
 ### technologies which i used to create this website
 ```
-Front-end: GreenSock && npm stuff && DB json && Swiper js
+Front-end: GreenSock && DB json && Swiper js
 
 Back-end: Flask, Fetch API
 ```
